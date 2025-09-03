@@ -17,7 +17,6 @@ class Base(models.AbstractModel):
         for row in rows:
             row[index] = anonymize_key
 
-    @api.multi
     def _export_rows(self, *args, **kwargs):
         rows = super()._export_rows(*args, **kwargs)
         if self.env.user.has_group(
